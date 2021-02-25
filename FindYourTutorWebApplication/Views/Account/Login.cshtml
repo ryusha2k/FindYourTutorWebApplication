@@ -1,0 +1,35 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "Вход";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/signup.css" />
+</head>
+<body>
+    <form asp-action="Login" id="login" method="post">
+        <h1>Вход</h1>
+        <fieldset id="inputs">
+            <div class="form-group">
+                <label asp-for="Email"><b>Почта</b></label>
+                <input asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"><b>Пароль</b></label>
+                <input asp-for="Password" />
+            </div>
+            <div class="form-group">
+                <label asp-for="RememberUser"><b>Запомнить меня</b></label>
+                <input asp-for="RememberUser" />
+            </div>
+            <br/>
+        </fieldset>
+        <fieldset id="actions">
+            <input id="submit" value="Войти" type="submit">
+            <a href="">Забыли пароль?</a><a href="">Регистрация</a>
+        </fieldset>
+    </form>
+
+</body>

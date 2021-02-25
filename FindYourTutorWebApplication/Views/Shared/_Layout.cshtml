@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widrh=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/css/bundle.css">     //Когда шаришь стиль, засираются изображения
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">LOGO</div>
+                <nav class="nav">
+                    <a class="nav__link" asp-controller="Home" asp-action="Index">Главная</a>
+                    <a class="nav__link" asp-controller="Home" asp-action="Search">Поиск репетитора</a>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <form method="post" asp-controller="account" asp-action="logout">
+                            <button type="submit" style="width:auto"
+                                    class="nav-link btn btn-link py-0">
+                                Выйти из @User.Identity.Name
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="nav__link" asp-controller="Account" asp-action="Register">Регистрация</a>
+                        <a class="nav__link" asp-controller="Account" asp-action="Login">Вход</a>
+                    }
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

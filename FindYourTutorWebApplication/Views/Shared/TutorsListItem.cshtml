@@ -1,0 +1,19 @@
+﻿@model Tutor
+<div class="spisok_cont">
+    <img src="~/img/rep/img.jpg" align="left" width="200" height="200" alt="">
+    <div class="content">
+        <h3 class="title"><a asp-controller="Tutors" asp-action="Tutor">@Model.Name @Model?.MiddleName @Model.LastName</a></h3>
+        <p>
+            @foreach (var subject in Model.Subjects)
+                @(subject.Name + " ")
+        </p>
+        <div class="price">500 rub/chas</div>
+        <div class="rating-mini">
+            <span class="active"></span>
+            <span class="active"></span>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>

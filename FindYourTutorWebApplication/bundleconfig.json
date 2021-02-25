@@ -1,0 +1,11 @@
+[
+  {
+    "outputFileName": "wwwroot/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/css/reviews.css",
+      "wwwroot/css/search.css",
+      "wwwroot/css/signup.css",
+      "wwwroot/css/style.css"
+    ]
+  }
+]

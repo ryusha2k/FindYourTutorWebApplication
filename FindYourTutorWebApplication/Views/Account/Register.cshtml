@@ -1,0 +1,39 @@
+﻿@model RegisterViewModel
+
+@{ 
+    ViewBag.Title = "Регистрация";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/regis.css" />
+</head>
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="container_reg">
+        <h1>Регистрация</h1>
+        <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+        <hr>
+        <div class="form-group">
+            <label asp-for="Email"><b>Почта</b></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"><b>Пароль</b></label>
+            <input asp-for="Password" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword"><b>Повторите пароль</b></label>
+            <input asp-for="ConfirmPassword" />
+        </div>
+        <hr>
+        <div class="form-group">
+            <p>Создавая учетную запись, вы соглашаетесь с нашими <a href="#">Условия и конфиденциальность.</a>.</p>
+            <button type="submit" class="registerbtn">Зарегистрироваться</button>
+        </div>
+    </div>
+
+    <div class="container signin">
+        <p>Уже есть аккаунт?<a asp-action="Login">войти в систему</a>.</p>
+    </div>
+</form>

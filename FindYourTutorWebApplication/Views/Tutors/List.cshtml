@@ -1,0 +1,13 @@
+﻿@model TutorsListViewModel
+<h1>Tutors</h1>
+<ul>
+    @foreach (var tutor in Model.Tutors)
+    {
+        <li>
+            @Html.Partial("TutorsListItem", tutor)
+        </li>
+        
+    }
+</ul>
+<page-link page-model="Model.PageViewModel" page-action="List"></page-link>
+
